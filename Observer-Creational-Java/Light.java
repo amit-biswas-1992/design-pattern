@@ -1,4 +1,9 @@
-Class Light{
+//import package of ArrayList
+import java.util.ArrayList;
+import java.util.List;
+
+
+class Light{
 
     int status;
     List<LightObserver> observers = new ArrayList<>();
@@ -12,12 +17,12 @@ Class Light{
     }
 
     void updateStatus(int status){
-        this.status = status
+        this.status = status;
     }
 
     
-    void notify(){
-        this.observers.stream().forEach( it=> it.updateStatus());
+    public void notifyObserver(){
+        this.observers.stream().forEach( it -> it.updateStatus());
     }
 
 }
